@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 const port = 3001;
 const secretKey = 'your_secret_key';
 
+app.use(cors()); // Use cors middleware to enable CORS
 app.use(bodyParser.json());
 
 const users = JSON.parse(fs.readFileSync('users.json', 'utf-8'));
