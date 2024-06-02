@@ -4,6 +4,9 @@ import axios from 'axios';
 import authService from '../services/authService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import './Login.css';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -18,8 +21,11 @@ const Login = () => {
       const response = await axios.post('http://localhost:3001/login', { username, password });
       authService.login(response.data.token);
       navigate('/');
+      toast.success("Login Sucessful");
+
     } catch (err) {
       setError('Invalid username or password');
+      toast.error(error);
     }
   };
 
@@ -28,13 +34,14 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Username</label>
           <input
             type="text"
+            placeholder='Enter user name'
             className="form-control"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -47,20 +54,22 @@ const Login = () => {
             <input
               type={passwordVisible ? 'text' : 'password'}
               className="form-control"
+              placeholder='Enter Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+
             <button
               type="button"
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary btn-password"
               onClick={togglePasswordVisibility}
             >
               <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} />
             </button>
           </div>
         </div>
-        {error && <div className="alert alert-danger">{error}</div>}
+
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
     </div>

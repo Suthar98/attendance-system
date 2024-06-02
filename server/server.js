@@ -4,9 +4,14 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const cors = require('cors'); // Import the cors middleware
 
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 const app = express();
 const port = 3001;
-const secretKey = 'your_secret_key';
+
+const secretKey = process.env.JWT_SECRET;
 
 app.use(cors()); // Use cors middleware to enable CORS
 app.use(bodyParser.json());

@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './components/Login';
 import Home from './components/Home';
 import authService from './services/authService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <Router>
+      <ToastContainer />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
