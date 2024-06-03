@@ -1,0 +1,28 @@
+.ml-auto {
+    margin-left: auto;
+}
+
+/* .welcome-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff; /* Assuming you want white text on a dark background */
+
+.welcome-message {
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.background-image {
+    background-image: url('../assets/images/image3.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 92vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff; /* White text */
+    text-align: center;
+  }
