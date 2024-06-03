@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
 import { toast } from 'react-toastify';
-import backgroundImage from '../assets/images/image1.jpg';
+import backgroundImage from '../assets/images/image1.png';
 import Logo from '../assets/images/image2.jpg'
 
 
