@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require('express');           // Import the Express library
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
+const fs = require('fs');                     // Import file system module to read files
 const cors = require('cors'); // Import the cors middleware
 
 const dotenv = require('dotenv');
 dotenv.config();
 
 
-const app = express();
-const port = 3001;
+const app = express();   // Initialize the Express application
+const port = 3001;       // Define the port number
 
 const secretKey = process.env.JWT_SECRET;
 
@@ -31,5 +31,5 @@ app.post('/login', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`); // Log the server startup message
 });

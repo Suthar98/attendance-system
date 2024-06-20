@@ -31,10 +31,8 @@ const isAuthenticated = () => {
     const { exp } = jwtDecode(token);
     if (exp < Date.now() / 1000) {
       logout();
-      console.log("Sad");
       return false;
     }
-    console.log("Happy");
     return true;
   } catch (ex) {
     return false;

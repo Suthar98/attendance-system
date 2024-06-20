@@ -31,9 +31,7 @@ const Home = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* <Container className="welcome-message">
-        <h1>Welcome to the Attendance System</h1>
-      </Container> */}
+
 
       <div className="background-image">
         <div className="welcome-message">

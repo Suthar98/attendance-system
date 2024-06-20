@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from 'axios';                            // Import axios for making HTTP requests
 import authService from '../services/authService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';               // Import toast for notifications
 import backgroundImage from '../assets/images/image1.png';
 import Logo from '../assets/images/image2.jpg'
 
@@ -15,12 +15,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false); // state for password visibility
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate();                                // Initialize navigate function
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login', { username, password });
+      const response = await axios.post('http://localhost:3001/login', { username, password });   // Make POST request to login API
       authService.login(response.data.token);
       navigate('/');
       toast.success("Login Sucessful");
